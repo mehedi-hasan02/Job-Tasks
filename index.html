@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Board</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+                <img src="/assets/logo.png" alt="logo">
+                <h3>Dev<span>Board</span></h3>
+            </div>
+            <div class="right-corner">
+                <div class="count">
+                    <img src="/assets/checkbox.png" alt="">
+                    <p>0</p>
+                </div>
+                <div class="theme">
+                    <button id="theme-btn">
+                        <img src="/assets/theme-btn.png" alt="">
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main id="main">
+        <div class="task-container">
+            <div class="task-info">
+                <div class="available-task">
+                    <img src="/assets/checkbox.png" alt="">
+                    <div class="num-available-task">
+                        <p>Task Assigned <br><span>06</span></p>
+                    </div>
+                </div>
+
+                <div class="daily-qus">
+                    <img src="/assets/board.png" alt="">
+                    <p>Discover Something <br> New Today!</p>
+                </div>
+
+                <div class="today-date">
+                    <div class="image">
+                        <img src="/assets/calender.png" alt="">
+                    </div>
+                    <p id="today">
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="dot-line">
+
+            </div>
+
+            <div class="all-task">
+                <div class="job-task-data">
+                    <p class="company-name">ShopEase</p>
+                    <p class="job-title">Fix Mobile Button Issue </p>
+                    <div class="job-discription">
+                        <p>Debug using Chrome DevTools, check for
+                        </p>
+                    </div>
+
+                    <div class="dot-line">
+
+                    </div>
+                    <div class="deadline-div">
+                        <p class="deadline">Deadline <br> 2 Nov 2025</p>
+                        <button class="btn completed-btn">Completed</button>
+
+                    </div>
+
+                </div>
+                <div class="job-task-data">
+                    <p class="company-name">ShopEase</p>
+                    <p class="job-title">Fix Mobile Button Issue </p>
+                    <div class="job-discription">
+                        <p>Debug using Chrome DevTools, check for
+                        </p>
+                    </div>
+
+                    <div class="dot-line">
+
+                    </div>
+                    <div class="deadline-div">
+                        <p class="deadline">Deadline <br> 2 Nov 2025</p>
+                        <button class="btn completed-btn">Completed</button>
+
+                    </div>
+
+                </div>
+                <div class="job-task-data">
+                    <p class="company-name">ShopEase</p>
+                    <p class="job-title">Fix Mobile Button Issue </p>
+                    <div class="job-discription">
+                        <p>Debug using Chrome DevTools, check for
+                        </p>
+                    </div>
+
+                    <div class="dot-line">
+
+                    </div>
+                    <div class="deadline-div">
+                        <p class="deadline">Deadline <br> 2 Nov 2025</p>
+                        <button class="btn completed-btn">Completed</button>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="activity-container">
+            <div class="activity">
+                <div class="activity-title">
+                    <img src="/assets/activity.png" alt="">
+                    <h5>Activity Log</h5>
+                </div>
+                <button class="btn activity-btn">Clear History</button>
+            </div>
+
+            <div class="dot-line">
+
+            </div>
+
+            <div class="complete-task">
+                <p class="complete-task-details">You have Complete The Task Add Dark Mode at 12:48:15 PM</p>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        const todayDare = new Date().toDateString(); // "Thu Oct 02 2025"
+        const parts = todayDare.split(" "); // ["Thu", "Oct", "02", "2025"]
+
+        // Join the rest except the first part
+        const firstLine = parts[0];
+        const secondLine = parts.slice(1).join(" ");
+        let today = document.getElementById("today");
+        today.innerHTML = `${firstLine},<br>${secondLine}`;
+        today.style.color = 'black'
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
