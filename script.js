@@ -34,6 +34,42 @@ const jobs = [
         companyName: "Apple",
         jobTitle: "UI/UX Designer",
         jobDescription: "Design intuitive user interfaces and improve user experience across platforms."
+    },
+    {
+        id: 1,
+        companyName: "Google",
+        jobTitle: "Software Engineer",
+        jobDescription: "Design scalable systems, write efficient code, and collaborate with global teams."
+    },
+    {
+        id: 2,
+        companyName: "Microsoft",
+        jobTitle: "Frontend Developer",
+        jobDescription: "Build responsive web applications with modern frameworks ensuring accessibility."
+    },
+    {
+        id: 3,
+        companyName: "Amazon",
+        jobTitle: "Data Analyst",
+        jobDescription: "Analyze datasets, create dashboards, and support data-driven decisions."
+    },
+    {
+        id: 4,
+        companyName: "Tesla",
+        jobTitle: "AI/ML Engineer",
+        jobDescription: "Develop machine learning models to improve autonomous driving systems."
+    },
+    {
+        id: 5,
+        companyName: "Meta",
+        jobTitle: "Product Manager",
+        jobDescription: "Define product vision, manage development roadmaps, and align with business goals."
+    },
+    {
+        id: 6,
+        companyName: "Apple",
+        jobTitle: "UI/UX Designer",
+        jobDescription: "Design intuitive user interfaces and improve user experience across platforms."
     }
 ];
 
@@ -53,6 +89,7 @@ if (back) {
         window.location.href = 'index.html';
     });
 }
+
 
 
 let allTask = document.querySelector('.all-task')
@@ -115,6 +152,14 @@ showJobs();
 
 
 let completeBtn = document.querySelectorAll('.completed-btn');
+let remJob = jobs.length;
+let job = document.querySelector('#rem-job');
+if (remJob < 10)
+    job.innerText = `0${remJob}`;
+else
+    job.innerText = `${remJob}`;
+
+let comJob = 0;
 
 completeBtn.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -125,6 +170,25 @@ completeBtn.forEach(btn => {
 
         btn.style.backgroundColor = '#b7b9caff';
         btn.style.cursor = 'not-allowed';
+        remJob--;
+        comJob++;
+
+        if (remJob < 10) {
+            job.innerText = `0${remJob}`;
+
+        } else {
+            job.innerText = `${remJob}`;
+
+        }
+
+        if (comJob < 10) {
+            let jobCom = document.querySelector('#job-complete');
+            jobCom.innerText = `0${comJob}`;
+        }
+        else {
+            let jobCom = document.querySelector('#job-complete');
+            jobCom.innerText = `${comJob}`;
+        }
 
         // console.log(jobTitles);
         showActivity();
